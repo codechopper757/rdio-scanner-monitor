@@ -81,7 +81,6 @@ Use tab-separated lines:
 python3 sdrdash_curses.py
 ```
 
-- Press `q` to quit.
 - Resize your terminal as needed — wide terminals work best.
 
 ---

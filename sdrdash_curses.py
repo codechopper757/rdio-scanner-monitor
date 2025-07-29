@@ -14,7 +14,7 @@ TG_COLOR_MAP = {
     'green': {'383', '384', '376', '375', '381'},
     'brown': {'345', '346', '347', '352', '340', '341', '343', '342', '348', '349', '350'},
     'orange': {str(tg) for tg in range(201, 206)},
-    'white': {'270', '272', '273'},
+    'white': {'270', '272', '273', '274'},
     'yellow': {'231', '232'},
     'magenta': {str(tg) for tg in range(212, 225)},
 }
@@ -89,7 +89,7 @@ def main(stdscr):
     talkgroup_map_path = os.path.expanduser('~/SDRTrunk/logs/talkgroups.tsv')
     talkgroup_map = load_talkgroup_map(talkgroup_map_path)
 
-    stdscr.addstr(0, 0, "📻 SDRTrunk Curses Dashboard - Press 'q' to quit", COLOR_PAIR_MAP['magenta'] | curses.A_BOLD)
+    stdscr.addstr(0, 0, "📻 SDRTrunk Curses Dashboard", COLOR_PAIR_MAP['magenta'] | curses.A_BOLD)
     stdscr.refresh()
 
     max_lines = curses.LINES - 2
@@ -117,7 +117,7 @@ def main(stdscr):
                         lines.pop(0)
 
                     stdscr.clear()
-                    stdscr.addstr(0, 0, "📻 SDRTrunk Curses Dashboard - Press 'q' to quit", COLOR_PAIR_MAP['magenta'] | curses.A_BOLD)
+                    stdscr.addstr(0, 0, "📻 SDRTrunk Curses Dashboard", COLOR_PAIR_MAP['magenta'] | curses.A_BOLD)
                     for idx, (text, clr) in enumerate(lines, 1):
                         stdscr.addstr(idx, 0, text[:curses.COLS-1], clr)
                     stdscr.refresh()
